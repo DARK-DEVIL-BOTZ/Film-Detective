@@ -1,0 +1,34 @@
+x-uffizzi:
+  ingress:
+    service: app
+    port: 8080
+
+services:
+  app:
+    build: .
+    environment:
+      BOT_TOKEN: 5764808122:AAHEBx3fRN-ujCqoP8lpUwMPn4gFSXCTwVU
+      API_ID: 19562731
+      API_HASH: 1667473e722f17eaa8ccbb98dc5f727d
+      CHANNELS: -1001621272794 -1001607692169 -1001673187322
+      ADMINS: 5512382938 2071644540
+      LOG_CHANNEL: -1001787331054
+      DATABASE_NAME: malindu7
+      DATABASE_URI: mongodb+srv://film-detective:darkdevil777@malindu7.yt2n28n.mongodb.net/?retryWrites=true&w=majority
+      COLLECTION_NAME: Devil_Films
+      AUTH_CHANNEL: -1001616221826
+    deploy:
+      resources:
+        limits:
+          memory: 4000M
+    restart: always
+    ports:
+      - "3000:3000"
+    privileged: true
+    depends_on:
+      - app
+    cap_add:
+      - SYS_ADMIN
+    restart: always
+volumes:
+  data:
