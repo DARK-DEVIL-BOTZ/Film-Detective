@@ -13,9 +13,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Movies_search')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+API_ID = int(environ.get('API_ID', '19562731'))
+API_HASH = environ.get('API_HASH', '1667473e722f17eaa8ccbb98dc5f727d')
+BOT_TOKEN = environ.get('BOT_TOKEN', '5648597986:AAHIHqPyVxebRAAXHSzcFjpGyngmmbDprnA')
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -23,7 +23,7 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/7483f17aba9b8b9fe3fd2.jpg https://telegra.ph/file/2b25fe26acfe2b03c498b.jpg https://telegra.ph/file/cbc1b02c3eccffa4338e7.jpg https://telegra.ph/file/afa3857624ea73d75b952.jpg https://telegra.ph/file/d9aefbb2fad9acf2167ef.jpg https://telegra.ph/file/a2249ed4e7059b284c00d.jpg https://telegra.ph/file/4e46577784df1d6b7fc68.jpg https://telegra.ph/file/d3775a0ffb2574034f4f3.jpg https://telegra.ph/file/a380df4cd7f89db9b3ec4.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2071644540').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
@@ -33,12 +33,12 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', '')
+DATABASE_URI = environ.get('DATABASE_URI', 'mongodb+srv://film-detective:darkdevil777@malindu7.yt2n28n.mongodb.net/?retryWrites=true&w=majority')
+DATABASE_NAME = environ.get('DATABASE_NAME', 'malindu7')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Devil_Films')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001787331054'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
